@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hahay palpalepalpale</title>
+  <style>
+    body {
+      font-family: monospace;
+      font-size: 2em;
+      padding: 0px;
+      margin: 0px;
+      background: #222;
+      color: #ffffff;
+      /* display: flex; */
+      /* justify-content: center; */
+      /* align-items: center; */
+      /* height: 100vh; */
+    }
+    .container1 {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+    body p {
+      margin: 0;
+      padding: 0;
+    }
+    #typing {
+      white-space: nowrap;
+      border-right: 3px solid #fdfdfd;
+      padding-right: 5px;
+      animation: blinkCaret 0.7s step-end infinite;
+      justify-content: left;
+      margin-left: 15px;
+    }
+    @keyframes blinkCaret {
+      50% { border-color: transparent; }
+    }
+  </style>
+</head>
+<body>
+
+  <p>slogan ipm cileungsi kaya gimana sih?</p>
+  <div class="container1">
+    <p> slogan ipm cileungsi tuh ginii</p>
+    <div id="typing"></div>
+  </div>
+  <p>by vall</p>
+  <div class="container">
+    
+  </div>
+
+
+<script>
+  const words = ["IPM?", "JAYA", "IPM?", "JAYA", "IPM?", "SMANGAT LUAR BIASA"];
+  const typingSpeed = 100; // waktu delay tiap huruf (ms)
+  const displayDuration = 500; // durasi tampil tiap kata (ms)
+  
+  const typingElement = document.getElementById("typing");
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let typingTimeout;
+
+  function typeWord() {
+    if (charIndex < words[wordIndex].length) {
+      typingElement.textContent += words[wordIndex][charIndex];
+      charIndex++;
+      typingTimeout = setTimeout(typeWord, typingSpeed);
+    } else {
+      // setelah ketik selesai, tunggu 5 detik lalu hapus dan ganti kata
+      setTimeout(() => {
+        eraseWord();
+      }, displayDuration);
+    }
+  }
+
+  function eraseWord() {
+    if (charIndex > 0) {
+      typingElement.textContent = words[wordIndex].substring(0, charIndex - 1);
+      charIndex--;
+      typingTimeout = setTimeout(eraseWord, typingSpeed / 2);
+    } else {
+      wordIndex = (wordIndex + 1) % words.length;
+      typeWord();
+    }
+  }
+
+  // mulai efek typing
+  typeWord();
+</script>
+
+</body>
+</html>
