@@ -191,7 +191,7 @@ footer {
   .header { flex-wrap: wrap; text-align: center; }
   .menu { margin: 10px auto 0; flex-wrap: wrap; }
   .teks h2 { font-size: 28px; }
-  .photobox { width: 180px; height: 220px; }
+  .photobox { width: 95%; height: 100%; }
 }
 @media (max-width: 480px) {
   .teks h2 { font-size: 20px;}
