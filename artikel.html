@@ -3,50 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>hahay palpalepalpale</title>
-  <link rel="stylesheet" href="artikel.css">
+  <title>Website IPM</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #222;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      background-color: #f8f8ed;
+      padding: 10px 3%;
+      flex-wrap: wrap;
+    }
+    .logo img {
+      width: 2.3rem;
+      margin-right: 20px;
+    }
+    .header h1 {
+      font-size: 18px;
+      font-weight: 550;
+      color: #000;
+    }
+    .menu {
+      display: flex;
+      margin-left: auto;
+      flex-wrap: wrap;
+    }
+    .menu a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #000;
+      font-weight: 400;
+      font-size: 14px;
+    }
+    .menu a:hover {
+      color: #93E9BE;
+      transition: 0.4s;
+    }
+
+    /* Container typing */
+    .typing-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    #typing {
+      font-family: monospace;
+      font-size: 2em;
+      white-space: nowrap;
+      border-right: 3px solid #fdfdfd;
+      padding-right: 5px;
+      animation: blinkCaret 0.7s step-end infinite;
+    }
+    @keyframes blinkCaret {
+      50% { border-color: transparent; }
+    }
+
+    /* RESPONSIF */
+    @media (max-width: 768px) {
+      .header {
+        justify-content: center;
+        text-align: center;
+      }
+      .menu {
+        margin: 10px auto 0;
+        justify-content: center;
+      }
+      #typing {
+        font-size: 1.5em;
+      }
+    }
+    @media (max-width: 480px) {
+      #typing {
+        font-size: 1.2em;
+      }
+      .header h1 {
+        font-size: 16px;
+      }
+      .menu a {
+        font-size: 12px;
+        margin: 5px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <img src="asset/LOGO IPM SMKM2.png" alt="logoipmsmkm2">
+    </div>
+    <h1>PR IPM SMK Muhammadiyah 2 Cileungsi</h1>
+    <div class="menu">
+      <a href="artikel1.html">Beranda</a>
+      <a href="artikel1.html">Struktur</a>
+      <a href="artikel2.html">Konten</a>
+      <a href="artikel2.html">Artikel</a>
+      <a href="artikel3.html">Kontak</a>
+    </div>
+  </div>
 
+  <!-- Typing Effect -->
+  <div class="typing-container">
+    <p id="typing"></p>
+  </div>
 
-<script>
-  const words = ["Sabar Yaa!!! Website Masih Dalam Pengerjaan"];
-  const typingSpeed = 100; // waktu delay tiap huruf (ms)
-  const displayDuration = 500; // durasi tampil tiap kata (ms)
-  
-  const typingElement = document.getElementById("typing");
+  <script>
+    const words = ["Sabar Yaa!!! Website Masih Dalam Pengerjaan"];
+    const typingSpeed = 100;
+    const displayDuration = 2000; // durasi setelah teks selesai diketik
 
-  let wordIndex = 0;
-  let charIndex = 0;
-  let typingTimeout;
+    const typingElement = document.getElementById("typing");
+    let wordIndex = 0;
+    let charIndex = 0;
 
-  function typeWord() {
-    if (charIndex < words[wordIndex].length) {
-      typingElement.textContent += words[wordIndex][charIndex];
-      charIndex++;
-      typingTimeout = setTimeout(typeWord, typingSpeed);
-    } else {
-      // setelah ketik selesai, tunggu 5 detik lalu hapus dan ganti kata
-      setTimeout(() => {
-        eraseWord();
-      }, displayDuration);
+    function typeWord() {
+      if (charIndex < words[wordIndex].length) {
+        typingElement.textContent += words[wordIndex][charIndex];
+        charIndex++;
+        setTimeout(typeWord, typingSpeed);
+      } else {
+        setTimeout(eraseWord, displayDuration);
+      }
     }
-  }
 
-  function eraseWord() {
-    if (charIndex > 0) {
-      typingElement.textContent = words[wordIndex].substring(0, charIndex - 1);
-      charIndex--;
-      typingTimeout = setTimeout(eraseWord, typingSpeed / 2);
-    } else {
-      wordIndex = (wordIndex + 1) % words.length;
-      typeWord();
+    function eraseWord() {
+      if (charIndex > 0) {
+        typingElement.textContent = words[wordIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseWord, typingSpeed / 2);
+      } else {
+        wordIndex = (wordIndex + 1) % words.length;
+        typeWord();
+      }
     }
-  }
 
-  // mulai efek typing
-  typeWord();
-</script>
-
+    typeWord();
+  </script>
 </body>
 </html>
