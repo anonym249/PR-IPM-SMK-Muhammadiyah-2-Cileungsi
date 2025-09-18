@@ -121,21 +121,18 @@ bottom: 0%;
 .wrapper {
   display: flex;
   justify-content: center;
-  align-items: stretch;
-  gap: 25px;
+  align-items: center;
+  gap: 20px;
   flex-wrap: wrap;
-  padding: 40px 20px;
+  padding: 20px;
+  margin-bottom: 8%;
 }
 .photobox {
-  background: #fff;
-  color: #000;
+  overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  width: 300px;
-  padding: 20px;
-  flex: 1 1 calc(33.333% - 25px); /* default 3 kolom */
-  box-sizing: border-box;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 235px;
+  height: 298px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 .photobox img {
   width: 100%;
@@ -147,10 +144,6 @@ bottom: 0%;
 .photobox img:hover {
   transform: scale(1.2);
   cursor: pointer;
-}
-.photobox:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 /* Footer */
@@ -198,13 +191,12 @@ footer {
   .header { flex-wrap: wrap; text-align: center; }
   .menu { margin: 10px auto 0; flex-wrap: wrap; }
   .teks h2 { font-size: 28px; }
-  .photobox { flex: 1 1 calc(50% - 20px); }
-  /* .wrapper { gap: 35px; padding: 30px 15px; justify-content: center;} */
+  .photobox { width: 180px; height: 220px; }
 }
 @media (max-width: 480px) {
   .teks h2 { font-size: 20px;}
   .teks a { font-size: 12px; padding: 8px 16px; }
-  .tentang h3 { font-size: 40px; width: 400;}
+  .tentang h3 { font-size: 20px; }
   .tentang p { font-size: 14px; }
   .pengurus h3 { font-size: 18px; }
 }
