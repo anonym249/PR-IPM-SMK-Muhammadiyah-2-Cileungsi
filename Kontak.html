@@ -1,64 +1,103 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Website IPM - Pale</title>
-  <link rel="stylesheet" href="kontak.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web pribadi pale</title>
+    <link rel="stylesheet" href="kontak.css">
 </head>
 <body>
-  <!-- Header dari code 2 -->
-  <div class="header">
-    <div class="logo">
-      <img src="asset/LOGO IPM SMKM2.png" alt="logoipmsmkm2">
+    <div class="header">
+        <div class="logo">
+            <img src="asset/LOGO IPM SMKM2.png" alt="logoipmsmkm2">
+        </div>
+        <h1>PR IPM SMK Muhammadiyah 2 Cileungsi</h1>
+        <div class="menu">
+            <a href="Beranda.html"><b><ul>Beranda</ul></b></a>
+            <a href="Struktur.html"><b><ul>Struktur</ul></b></a>
+            <a href="Konten.html"><b><ul>Konten</ul></b></a>
+            <a href="Artikel.html"><b><ul>Artikel</ul></b></a>
+            <a href="Kontak.html"><b><ul>Kontak</ul></b></a>
+        </div>
     </div>
-    <h1>PR IPM SMK Muhammadiyah 2 Cileungsi</h1>
-    <div class="menu">
-      <a href="artikel1.html"><b>Beranda</b></a>
-      <a href="artikel1.html"><b>Struktur</b></a>
-      <a href="artikel2.html"><b>Konten</b></a>
-      <a href="artikel2.html"><b>Artikel</b></a>
-      <a href="artikel3.html"><b>Kontak</b></a>
-    </div>
-  </div>
 
-  <!-- Animasi typing dari code 1 -->
-  <div class="container1">
-    <p id="typing"></p>
-  </div>
+    <div class="content">
+        <div class="background">
+            <img src="asset/mapecap bocah.jpg" alt="">
+        </div>
 
-  <script>
-    const words = ["Sabar Yaa!!! Website Masih Dalam Pengerjaan"];
-    const typingSpeed = 100;
-    const displayDuration = 1000; 
-    
-    const typingElement = document.getElementById("typing");
-    let wordIndex = 0;
-    let charIndex = 0;
-    let typingTimeout;
+        <div class="teks">
+            <h2>Welcome To Our Website</h2>
+            <div class="isi">
+                <p>PR IPM SMK Muhamadiyah 2 Cileungsi </p>
+            </div>
+            <a href="pale.html">Join Now!!</a>
+        </div>
 
-    function typeWord() {
-      if (charIndex < words[wordIndex].length) {
-        typingElement.textContent += words[wordIndex][charIndex];
-        charIndex++;
-        typingTimeout = setTimeout(typeWord, typingSpeed);
-      } else {
-        setTimeout(() => { eraseWord(); }, displayDuration);
-      }
-    }
+        <div class="tentang">
+            <div class="apasihipm">
+                <h3>Tentang IPM</h3>
+            </div>
+            <div class="p">
+                <p>IPM adalah wadah pengkaderan dan pengembangan potensi pelajar untuk membentuk generasi cerdas, kreatif, dan berakhlak Islami. Bukan tempat orang sempurna, tapi ruang untuk saling mendukung, mengingatkan, dan bertumbuh bersama. Di sini, sekolah dimaknai bukan cuma tempat belajar materi, tapi juga belajar hidup dan menyiapkan masa depan.</p>
+            </div>
+        </div>
+        
+        <div class="pengurus">
+            <h3>Our Content on Social Media</h3>
+            <div class="wrapper">
+                <div class="photobox">
+                    <a href="https://www.instagram.com/p/DONXACrEpCW/" target="_blank">
+                        <img src="asset/SnapInsta.to_541942218_18364224688156795_6991417598199511544_n.jpg" alt="">
+                    </a>
+                </div>
+                <div class="photobox">
+                    <a href="https://www.instagram.com/p/DNbz7U5SDok/" target="_blank">
+                        <img src="asset/SnapInsta.to_534328721_18362132161156795_1199863399339013436_n.jpg" alt="">
+                    </a>
+                </div>
+                <div class="photobox">
+                    <a href="https://www.instagram.com/p/DL42V0VyW0k/" target="_blank">
+                        <img src="asset/SnapInsta.to_516835888_18357900484156795_2579326072473623099_n.jpg" alt="">
+                    </a>
+                </div>
+                <div class="photobox">
+                    <a href="https://www.instagram.com/p/DL4EqFAyD1U/" target="_blank">
+                        <img src="asset/SnapInsta.to_504282104_18357869251156795_7736557174587874928_n.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>  
 
-    function eraseWord() {
-      if (charIndex > 0) {
-        typingElement.textContent = words[wordIndex].substring(0, charIndex - 1);
-        charIndex--;
-        typingTimeout = setTimeout(eraseWord, typingSpeed / 2);
-      } else {
-        wordIndex = (wordIndex + 1) % words.length;
-        typeWord();
-      }
-    }
-
-    typeWord();
-  </script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Pimpinan Ranting</h3>
+                <p>Ikatan Pelajar Muhammadiyah</p>
+                <p>Smk Muhammadiyah 2  Cileungsi</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Struktur</a></li>
+                </ul>
+                <ul>          
+                    <li><a href="#">Artikel</a></li>
+                    <li><a href="#">Konten</a></li>
+                </ul>
+                <ul><li><a href="#">Kontak</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="#"><img src="asset/ig_LE_upscale_balanced_x4.jpg" alt="Instagram"></a>
+                <a href="#"><img src="asset/yt_LE_upscale_balanced_x4.jpg" alt="YouTube"></a>
+                <a href="#"><img src="asset/tt.jpeg" alt="TikTok"></a>
+                <a href="#"><img src="asset/spotify.jpeg" alt="Spotify"></a>
+            </div>
+            <p>© 2025 IPM Ranting SMK Muhammadiyah 2 Cileungsi. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
