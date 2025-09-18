@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website IPM - Pale</title>
+  <link rel="stylesheet" href="kontak.css">
+</head>
+<body>
+  <!-- Header dari code 2 -->
+  <div class="header">
+    <div class="logo">
+      <img src="asset/LOGO IPM SMKM2.png" alt="logoipmsmkm2">
+    </div>
+    <h1>PR IPM SMK Muhammadiyah 2 Cileungsi</h1>
+    <div class="menu">
+      <a href="artikel1.html"><b>Beranda</b></a>
+      <a href="artikel1.html"><b>Struktur</b></a>
+      <a href="artikel2.html"><b>Konten</b></a>
+      <a href="artikel2.html"><b>Artikel</b></a>
+      <a href="artikel3.html"><b>Kontak</b></a>
+    </div>
+  </div>
+
+  <!-- Animasi typing dari code 1 -->
+  <div class="container1">
+    <p id="typing"></p>
+  </div>
+
+  <script>
+    const words = ["Sabar Yaa!!! Website Masih Dalam Pengerjaan"];
+    const typingSpeed = 100;
+    const displayDuration = 1000; 
+    
+    const typingElement = document.getElementById("typing");
+    let wordIndex = 0;
+    let charIndex = 0;
+    let typingTimeout;
+
+    function typeWord() {
+      if (charIndex < words[wordIndex].length) {
+        typingElement.textContent += words[wordIndex][charIndex];
+        charIndex++;
+        typingTimeout = setTimeout(typeWord, typingSpeed);
+      } else {
+        setTimeout(() => { eraseWord(); }, displayDuration);
+      }
+    }
+
+    function eraseWord() {
+      if (charIndex > 0) {
+        typingElement.textContent = words[wordIndex].substring(0, charIndex - 1);
+        charIndex--;
+        typingTimeout = setTimeout(eraseWord, typingSpeed / 2);
+      } else {
+        wordIndex = (wordIndex + 1) % words.length;
+        typeWord();
+      }
+    }
+
+    typeWord();
+  </script>
+</body>
+</html>
