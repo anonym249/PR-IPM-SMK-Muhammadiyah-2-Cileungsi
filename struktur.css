@@ -13,36 +13,33 @@ body {
 /* HEADER */
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: #f8f8ed;
-  padding: 10px 5%;
-  flex-wrap: wrap; /* biar kalau layar kecil bisa turun */
+  padding: 10px 3%;
 }
 
 .logo img {
-  width: 40px;
+  width: 2.3rem;
   height: auto;
 }
 
 .header h1 {
   font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  flex: 1;
+  font-weight: 550;
 }
 
 .menu {
+  margin-left: auto;
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
 }
 
 .menu a {
   text-decoration: none;
   color: #000;
-  font-weight: 400;
-  font-size: 15px;
+  margin: 0 10px;
+  font-weight: 300;
+  font-size: 14px;
   transition: 0.3s;
 }
 
@@ -50,81 +47,41 @@ body {
   color: #93E9BE;
 }
 
-/* HERO BACKGROUND */
-.background img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: brightness(50%);
-}
-
-/* TEKS HERO */
-.teks {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.pengurus {
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: #fff;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  margin-bottom: 8%;
 }
-
-.teks h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+.pengurus h1 {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  font-size: 26px;
+  font-weight: 800;
 }
-
-.teks a {
-  display: inline-block;
-  font-size: 16px;
-  background-color: #93E9BE;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  color: #000;
-  font-weight: 700;
-  transition: 0.3s;
-}
-
-.teks a:hover {
-  background-color: #14532d;
-  color: #fff;
-}
-
-/* TENTANG */
-.tentang {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.tentang h3 {
-  font-size: 28px;
-  color: #93E9BE;
-  margin-bottom: 15px;
-}
-
-.tentang p {
-  max-width: 800px;
-  margin: auto;
-  font-size: 16px;
-  color: #333;
+.ksb h1 {
+  margin-top: 0%;
 }
 
 /* CONTENT SOSMED */
 .wrapper {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15%;
   flex-wrap: wrap;
   padding: 30px 10px;
 }
 
 .photobox img {
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
   width: 230px;
   height: 280px;
   object-fit: cover;
   border-radius: 20px;
   transition: transform 0.5s ease;
+    gap: 15%;
 }
 
 .photobox img:hover {
@@ -135,14 +92,14 @@ body {
 footer {
   background-color: #000;
   color: #fff;
-  padding: 40px 20px;
+  padding: 50px 40px 20px
 }
 
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-bottom: 30px;
+  gap: 30px;
 }
 
 .footer-brand h3 {
@@ -151,6 +108,7 @@ footer {
 
 .footer-links {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
 }
@@ -167,6 +125,7 @@ footer {
   text-decoration: none;
   color: #fff;
   font-size: 14px;
+  text-align: center;
 }
 
 .footer-links ul li a:hover {
@@ -195,6 +154,16 @@ footer {
 
 /* 📱 RESPONSIVE MEDIA QUERY */
 @media (max-width: 768px) {
+  .header { flex-wrap: wrap; text-align: center; }
+  .menu { margin: 10px auto 0; flex-wrap: wrap; }
+  .photobox { width: 180px; height: 220px; }
+}
+@media (max-width: 480px) {
+  .photobox img { width: 130px; height: 170px; }
+  .pengurus h3 { font-size: 18px; }
+  .footer-links { flex-direction: column; align-items: center; }
+}
+/* @media (max-width: 768px) {
   .header {
     flex-direction: column;
     text-align: center;
@@ -208,29 +177,13 @@ footer {
     justify-content: center;
   }
 
-  .teks h2 {
-    font-size: 1.5rem;
-  }
-
-  .tentang p {
-    font-size: 14px;
-  }
-
   .photobox img {
     width: 160px;
     height: 200px;
   }
-}
+} */
 
-@media (max-width: 480px) {
-  .teks h2 {
-    font-size: 1.2rem;
-  }
-
-  .teks a {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
+/* @media (max-width: 480px) {
 
   .footer-links {
     flex-direction: column;
@@ -241,4 +194,4 @@ footer {
     width: 130px;
     height: 170px;
   }
-}
+} */
