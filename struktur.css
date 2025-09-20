@@ -76,7 +76,6 @@
     @keyframes blinkCaret {
       50% { border-color: transparent; }
     }
-
 @media (max-width: 768px) {
   .header { flex-wrap: wrap; text-align: center; }
   .menu { margin: 10px auto 0; flex-wrap: wrap; }
