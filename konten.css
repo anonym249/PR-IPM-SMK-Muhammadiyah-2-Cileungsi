@@ -1,4 +1,4 @@
-* {
+    * {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
@@ -13,38 +13,42 @@
     }
 
     /* Header */
-    .header {
-      display: flex;
-      align-items: center;
-      background-color: #f8f8ed;
-      padding: 10px 3%;
-      flex-wrap: wrap;
-    }
-    .logo img {
-      width: 2.3rem;
-      margin-right: 20px;
-    }
-    .header h1 {
-      font-size: 18px;
-      font-weight: 550;
-      color: #000;
-    }
-    .menu {
-      display: flex;
-      margin-left: auto;
-      flex-wrap: wrap;
-    }
-    .menu a {
-      text-decoration: none;
-      margin: 0 10px;
-      color: #000;
-      font-weight: 400;
-      font-size: 14px;
-    }
-    .menu a:hover {
-      color: #93E9BE;
-      transition: 0.4s;
-    }
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8ed;
+  padding: 10px 3%;
+  color: #000;
+}
+
+.logo img {
+  width: 2.3rem;
+  margin-right: 20px;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: 550;
+}
+
+.menu {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  margin: 0 10px;
+  font-weight: 300;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #93E9BE;
+}
 
     /* Container typing */
     .typing-container {
@@ -55,41 +59,31 @@
       text-align: center;
       padding: 40px 20px;
     }
-    #typing {
-      font-family: monospace;
-      font-size: 2em;
-      white-space: nowrap;
-      border-right: 3px solid #fdfdfd;
-      padding-right: 5px;
-      animation: blinkCaret 0.7s step-end infinite;
-    }
+#typing {
+  font-family: monospace;
+  font-size: 2em;
+  border-right: 3px solid #fdfdfd;
+  padding-right: 5px;
+  animation: blinkCaret 0.7s step-end infinite;
+
+  /* biar responsif di HP */
+  white-space: normal;         
+  word-wrap: break-word;       
+  overflow-wrap: break-word;   
+  max-width: 90vw;             
+  text-align: center;          
+}
     @keyframes blinkCaret {
       50% { border-color: transparent; }
     }
 
-    /* RESPONSIF */
-    @media (max-width: 768px) {
-      .header {
-        justify-content: center;
-        text-align: center;
-      }
-      .menu {
-        margin: 10px auto 0;
-        justify-content: center;
-      }
-      #typing {
-        font-size: 1.5em;
-      }
-    }
-    @media (max-width: 480px) {
-      #typing {
-        font-size: 1.2em;
-      }
-      .header h1 {
-        font-size: 16px;
-      }
-      .menu a {
-        font-size: 12px;
-        margin: 5px;
-      }
-    }
+@media (max-width: 768px) {
+  .header { flex-wrap: wrap; text-align: center; }
+  .menu { margin: 10px auto 0; flex-wrap: wrap; }
+  .photobox { width: 180px; height: 220px; }
+}
+@media (max-width: 480px) {
+  .photobox img { width: 130px; height: 170px; }
+  .pengurus h3 { font-size: 18px; }
+  .footer-links { flex-direction: column; align-items: center; }
+}

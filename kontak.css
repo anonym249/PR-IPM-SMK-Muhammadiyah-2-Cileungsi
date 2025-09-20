@@ -1,207 +1,89 @@
-* {
-  padding: 0;
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-}
-body {
-  background-color: #F8F8F8;
-}
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #222;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-/* Header */
+    /* Header */
 .header {
   display: flex;
   align-items: center;
   background-color: #f8f8ed;
   padding: 10px 3%;
+  color: #000;
 }
-.logo img  {
+
+.logo img {
   width: 2.3rem;
   margin-right: 20px;
 }
+
 .header h1 {
   font-size: 18px;
   font-weight: 550;
 }
+
 .menu {
-  display: flex;
   margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
-/* Header menu kecil */
+
 .menu a {
   text-decoration: none;
-  margin: 0 10px;
   color: #000;
+  margin: 0 10px;
   font-weight: 300;
-  font-size: 14px; /* <-- kecilin font */
+  font-size: 14px;
+  transition: 0.3s;
 }
+
 .menu a:hover {
   color: #93E9BE;
-  transition: 0.4s;
 }
 
-/* Background + teks */
-.background {
-  position: relative;
-  width: 100%;
-  height: 60vh;
-  overflow: hidden;
-}
-.background img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-      filter: brightness(70%);
-}
-.background::after {
-  content: "";
-  position: absolute;
-bottom: 0%;
-    left: 0;
-    width: 100%;
-    height: 18%;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #f5f5f5 100%);
-}
-.teks {
-  position: absolute;
-  top: 43%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-}
-.teks h2 { font-size: 40px; margin-bottom: 15px; }
-.teks a {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 17px;
-  background-color: #93E9BE;
-  color: black;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: 0.4s;
-}
-.teks a:hover {
-  background-color: rgba(20, 83, 45);
-  color: #F8F8F8;
-}
+    /* Container typing */
+    .typing-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+#typing {
+  font-family: monospace;
+  font-size: 2em;
+  border-right: 3px solid #fdfdfd;
+  padding-right: 5px;
+  animation: blinkCaret 0.7s step-end infinite;
 
-/* Tentang */
-.tentang {
-  text-align: center;
-  padding: 60px 20px;
+  /* biar responsif di HP */
+  white-space: normal;         
+  word-wrap: break-word;       
+  overflow-wrap: break-word;   
+  max-width: 90vw;             
+  text-align: center;          
 }
-.tentang h3 {
-  color: #93E9BE;
-  font-size: 28px;
-  font-weight: 900;
-  -webkit-text-stroke: 0.3px black;
-}
-/* Tentang IPM jadi 3 baris max */
-.tentang .p {
-  max-width: 950px;  /* biar kebungkus */
-  margin: 20px auto 0;
-  line-height: 1.7;
-  text-align: center;
-}
-/* Judul Content biar center & warna */
-.pengurus h3 {
-  text-align: center;
-  margin: 40px 0 20px;
-  color: #93E9BE; /* hijau telor asin gelap */
-  font-size: 26px;
-  font-weight: 800;
-  margin-bottom: 3%;
-  -webkit-text-stroke: 0.3px black;
-}
-/* Wrapper + photobox */
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 20px;
-  margin-bottom: 8%;
-}
-.photobox {
-  flex: 1 1 220px;           /* minimal width 220px, sisanya fleksibel */
-  max-width: 250px;          /* biar nggak terlalu lebar */
-  aspect-ratio: 3 / 4;       /* proporsi kotak (3:4 seperti foto portrait) */
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-.photobox img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-  transition: transform 0.6s ease;
-}
-.photobox img:hover {
-  transform: scale(1.2);
-  cursor: pointer;
-}
+    @keyframes blinkCaret {
+      50% { border-color: transparent; }
+    }
 
-/* Footer */
-footer {
-  background-color: black;
-  color: white;
-  padding: 50px 40px 20px;
-}
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  margin-bottom: 30px;
-}
-.footer-links {   
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-.footer-links ul {
-  list-style: none;
-  text-align: center;
-  color: white;
-}
-.footer-links a { 
-  color: white;
-  text-decoration: none;
-  list-style: none;
-  text-align: center;
-}
-.footer-links a:hover { color: #93E9BE; }
-.footer-social { text-align: center; margin-bottom: 20px; }
-.footer-social img { width: 42px; height: 42px; }
-.footer-bottom {
-  text-align: center;
-  font-size: 14px;
-  color: #d1d5db;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  padding-top: 15px;
-}
-
-/* RESPONSIF */
 @media (max-width: 768px) {
   .header { flex-wrap: wrap; text-align: center; }
   .menu { margin: 10px auto 0; flex-wrap: wrap; }
-  .teks h2 { font-size: 28px; }
-    .photobox {
-    flex: 1 1 100%;   /* full width di HP */
-    max-width: 90%;   /* kasih space kanan-kiri biar lega */
-    margin: 0 auto;   /* biar center */
-  }
+  .photobox { width: 180px; height: 220px; }
 }
 @media (max-width: 480px) {
-  .teks h2 { font-size: 20px;}
-  .teks a { font-size: 12px; padding: 8px 16px; }
-  .tentang h3 { font-size: 20px; }
-  .tentang p { font-size: 14px; }
+  .photobox img { width: 130px; height: 170px; }
   .pengurus h3 { font-size: 18px; }
+  .footer-links { flex-direction: column; align-items: center; }
 }
